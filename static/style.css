@@ -1,0 +1,52 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    background: linear-gradient(to bottom, #02010A, #1B1B2F);
+    color: #c1ba9d;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10; 
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2; /* Adjusted z-index to ensure proper layering */
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('/static/coyote.png') no-repeat center;
+    background-size: contain;
+    opacity: 1;
+    z-index: -1; /* Ensures the overlay is above the canvas */
+}
+
+p {
+    font-size: 2rem;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    line-height: 1.6;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+p.visible {
+    opacity: 1;
+}

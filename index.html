@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Coyotech</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <style>
+        /* Styles ajustés pour #scrollContainer et .scrollText */
+        #scrollContainer {
+            position: fixed; /* Fixé pour rester au bas de l'écran */
+            bottom: 10%; /* Positionné à 10% du bas de l'écran */
+            left: 50%; /* Centré horizontalement */
+            transform: translate(-50%, 0); /* Ajustement pour un centrage parfait */
+            text-align: center; /* Centrage du texte */
+            width: 100%; /* Étirement horizontal pour occuper toute la largeur */
+        }
+
+        .scrollText {
+            font-size: 4rem; /* Taille de texte augmentée pour plus de visibilité */
+            color: #e9ddaf;
+            margin: 20px 0; /* Espacement entre les lignes */
+            text-shadow: 0 0 20px rgb(255, 255, 255); /* Amélioration de la lisibilité */
+            opacity: 0; /* Initialement invisible */
+            transition: opacity 1.5s ease-in-out; /* Animation d'apparition */
+        }
+
+        .scrollText.visible {
+            opacity: 1; /* Rendre visible */
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particleCanvas"></canvas>
+
+    <div class="overlay"></div>
+
+    <div id="scrollContainer">
+        <p class="scrollText" id="line1">Au cœur du désert, là où le vent murmure des secrets aux dunes...</p>
+        <p class="scrollText" id="line2">coyotechinfo{at}gmail.com</p>
+        <p class="scrollText" id="line3">Cinq, un, quatre, neuf, neuf, huit, quatre, six, un, sept</p>
+    </div>
+
+    <script>
+        // Script pour afficher les phrases une par une
+        document.addEventListener("DOMContentLoaded", () => {
+            const line1 = document.getElementById("line1");
+            const line2 = document.getElementById("line2");
+            const line3 = document.getElementById("line3");
+
+            // Afficher la première ligne immédiatement
+            setTimeout(() => line1.classList.add("visible"), 500);
+
+            // Afficher la deuxième ligne après un délai
+            setTimeout(() => line2.classList.add("visible"), 2500);
+
+            // Afficher la troisième ligne après un autre délai
+            setTimeout(() => line3.classList.add("visible"), 4500);
+        });
+    </script>
+</body>
+</html>
