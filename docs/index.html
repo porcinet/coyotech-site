@@ -41,22 +41,27 @@
         <p class="scrollText" id="line3">Cinq, un, quatre, neuf, neuf, huit, quatre, six, un, sept</p>
     </div>
 
-    <script>
-        // Script pour afficher les phrases une par une
-        document.addEventListener("DOMContentLoaded", () => {
-            const line1 = document.getElementById("line1");
-            const line2 = document.getElementById("line2");
-            const line3 = document.getElementById("line3");
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const line1 = document.getElementById("line1");
+        const line2 = document.getElementById("line2");
+        const line3 = document.getElementById("line3");
 
-            // Afficher la première ligne immédiatement
-            setTimeout(() => line1.classList.add("visible"), 500);
+        // Show line1
+        line1.classList.add("visible");
 
-            // Afficher la deuxième ligne après un délai
-            setTimeout(() => line2.classList.add("visible"), 2500);
+        // After 5 seconds, hide line1
+        setTimeout(() => {
+            line1.classList.remove("visible");
+        }, 5000);
 
-            // Afficher la troisième ligne après un autre délai
-            setTimeout(() => line3.classList.add("visible"), 4500);
-        });
-    </script>
+        // After 5.5 seconds, show line2 and line3
+        setTimeout(() => {
+            line2.classList.add("visible");
+            line3.classList.add("visible");
+        }, 5500);
+    });
+</script>
+    
 </body>
 </html>
